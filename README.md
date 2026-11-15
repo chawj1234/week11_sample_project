@@ -39,6 +39,7 @@ useState(initialCourses)에서 현재 목록 courses와 다음 목록을 전달�
 
 입력한 이름과 다음 번호를 새 과목에 넣는다. 기존 목록 끝에 새 과목을 붙인 뒤 번호를 하나 올리고 입력칸을 비운다.
 
+```
 function handleAdd(event) {
     event.preventDefault();
     if (newName === "") return;
@@ -54,13 +55,14 @@ function handleAdd(event) {
     setNextId(nextId + 1);
     setNewName("");
 }
-
+```
 
 
 ### 완료 상태 변경
 
 map으로 과목을 하나씩 확인한다. 클릭한 ID가 같으면 과목 정보를 복사하고 completed만 뒤집는다. 새 목록으로 화면을 그리면 체크 표시와 완료 개수가 바뀐다.
 
+```
 function handleToggle(id) {
     setCourses((previous) =>
     previous.map((course) => {
@@ -72,7 +74,7 @@ function handleToggle(id) {
     }),
     );
 }
-
+```
 
 ## 프로젝트 소개 및 실행
 
@@ -80,10 +82,12 @@ function handleToggle(id) {
 
 원본 Sample Project URL: https://github.com/2026-2-OSS/week11_sample_project
 
+```
 git clone https://github.com/2026-2-OSS/assign11-c02-22100722.git
 cd assign11-c02-22100722
 npm install
 npm run dev
+```
 
 ![alt text](image.png)
 
@@ -106,4 +110,5 @@ npm run dev
 ## 링크
 
 GitHub URL: https://github.com/2026-2-OSS/assign11-c02-22100722
+
 Vercel URL: https://week11-sample-project-nine.vercel.app/
