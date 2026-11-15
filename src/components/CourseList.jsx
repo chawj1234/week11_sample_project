@@ -7,6 +7,10 @@ export default function CourseList() {
   const [courses, setCourses] = useState(initialCourses);
   const [newName, setNewName] = useState("");
 
+  const [nextId, setNextId] = useState(
+    Math.max(...initialCourses.map((course) => course.id)) + 1,
+  );
+
   // [제공] 삭제 기능: filter로 새 배열을 만들어 업데이트합니다.
   function handleDelete(id) {
     if (!window.confirm("이 과목을 삭제하시겠습니까?")) return;
@@ -16,7 +20,18 @@ export default function CourseList() {
   // TODO 1 (필수): 과목 추가 기능을 구현하세요.
   function handleAdd(event) {
     event.preventDefault();
-    // TODO: 빈 입력 검사, 새 과목 객체 생성, setCourses 호출, 입력창 초기화
+    if (newName === "") return;
+
+    const newCourse = {
+      id: nextId,
+      name: newName,
+      category: "Elective",
+      completed: false,
+    };
+
+    setCourses((previous) => [...previous, newCourse]);
+    setNextId(nextId + 1);
+    setNewName("");
   }
 
   // TODO 2 (필수): 완료 상태 변경 기능을 구현하세요.
