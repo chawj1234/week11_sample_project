@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CourseList from "./components/CourseList.jsx";
 
 export default function App() {
@@ -6,8 +7,8 @@ export default function App() {
       <header className="hero">
         <div>
           <p className="topline">OPEN SOURCE STUDIO · WEEK 11</p>
-          <h1>My Course Manager</h1>
-          <p className="subtitle">React Component, Props & State Practice</p>
+          <h1>나의 수강 과목</h1>
+          <p className="subtitle">이번 학기 수강 과목과 완료 상태</p>
         </div>
         <span className="tag">STUDENT STARTER</span>
       </header>
